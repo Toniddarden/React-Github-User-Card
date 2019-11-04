@@ -1,4 +1,8 @@
 import React from "react";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 
 class UserCard extends React.Component {
   constructor() {
@@ -28,15 +32,25 @@ class UserCard extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>
-          <img src={this.state.avatar} />
-        </p>
-        {this.state.user}
-        {this.state.id}
-        {this.state.blog}
-        {this.state.location}
-      </div>
+      <Card>
+        <CardActionArea>
+          <img src={this.state.avatar} alt='photo' />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {this.state.user}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {this.state.id}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {this.state.blog}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {this.state.location}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     );
   }
 }
